@@ -22,9 +22,14 @@ A magical animated loader built using **only HTML and CSS**. This project featur
 ## 📁 Folder Structure
 📦 unicorn-loader/
 ┣ 📄 index.html
-┣ 📄 styles.css
+┣ 📄 style.css
 
 ---
+---
 
+## 🚀 How to Use
 
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/SaniaDebbarma/cute-unicorn-like-loading-page-.git
    
