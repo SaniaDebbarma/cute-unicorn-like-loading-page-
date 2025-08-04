@@ -1,0 +1,151 @@
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  
+  body {
+    background: linear-gradient(to top right, #ffd6ff, #e7c6ff, #c8b6ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Comic Sans MS", sans-serif;
+    overflow: hidden;
+    flex-direction: column;
+  }
+  
+  /* Loading text */
+  .loading-text {
+    color: #6a0572;
+    font-size: 2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.1em solid #6a0572;
+    width: 0;
+    animation: typing 3s steps(20, end) forwards, blink 0.7s ;
+    margin-bottom: 2rem;
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 18ch }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  /* Unicorn Loader */
+  .unicorn {
+    position: relative;
+    width: 16em;
+    height: 16em;
+  }
+  
+  .unicorn__segment {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3em;
+    height: 2em;
+    transform: translate(-50%, -50%);
+  }
+  
+  .unicorn__segment:before {
+    animation: loop 2s cubic-bezier(0.6, 0, 0.4, 1) infinite;
+    background: linear-gradient(90deg, #fff 20%, #ffe0ff 20% 80%, #fff 80%);
+    border-radius: 0.5em;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+  }
+  
+  /* Unicorn face (1st segment) */
+  .unicorn__segment:first-of-type {
+    width: 4em;
+    height: 4em;
+    z-index: 1;
+  }
+  
+  .unicorn__segment:first-of-type:before {
+    background:
+      radial-gradient(0.25em 0.25em at 1.2em 1.5em, white 48%, transparent 50%), /* left eye white */
+      radial-gradient(0.5em 0.5em at 1.2em 1.6em, #000 48%, transparent 50%),    /* left eye black */
+      radial-gradient(0.25em 0.25em at 2.8em 1.5em, white 48%, transparent 50%), /* right eye white */
+      radial-gradient(0.5em 0.5em at 2.8em 1.6em, #000 48%, transparent 50%),    /* right eye black */
+      radial-gradient(0.5em 0.6em at 2em 0.4em, #ffb3ff 48%, transparent 50%),   /* horn */
+      radial-gradient(4em 3em at 2em 2em, #fff0f5 48%, transparent 50%),         /* face */
+      radial-gradient(1em 0.5em at 1em 2.7em, #ffb3cc 48%, transparent 50%),     /* blush left */
+      radial-gradient(1em 0.5em at 3em 2.7em, #ffb3cc 48%, transparent 50%);     /* blush right */
+    background-repeat: no-repeat;
+  }
+  
+  /* Unicorn tail (last segment) */
+  .unicorn__segment:last-of-type {
+    width: 3em;
+    height: 4em;
+  }
+  
+  .unicorn__segment:last-of-type:before {
+    background:
+      radial-gradient(1em 4em at 0.5em 0, #ffe0f0 48%, transparent 50%) 0 2em/3em 2em,
+      radial-gradient(1em 4em at 2.5em 0, #e0f0ff 48%, transparent 50%) 0 2em/3em 2em;
+    background-repeat: no-repeat;
+  }
+  
+  /* Rotation and delay for each segment */
+  @keyframes loop {
+    from {
+      transform: rotate(0) translateX(6em);
+    }
+    to {
+      transform: rotate(-1turn) translateX(6em);
+    }
+  }
+  
+  .unicorn__segment:nth-of-type(n) {
+    transform: translate(-50%, -50%) rotate(calc(-20deg + 1.333deg * (var(--i, 1) - 1)));
+  }
+  .unicorn__segment:nth-of-type(n):before {
+    transform: translateX(6em);
+    animation-delay: calc(0.02s * var(--i, 1));
+  }
+  
+  /* Assign segment index */
+  .unicorn__segment:nth-of-type(1)  { --i: 1; }
+  .unicorn__segment:nth-of-type(2)  { --i: 2; }
+  .unicorn__segment:nth-of-type(3)  { --i: 3; }
+  .unicorn__segment:nth-of-type(4)  { --i: 4; }
+  .unicorn__segment:nth-of-type(5)  { --i: 5; }
+  .unicorn__segment:nth-of-type(6)  { --i: 6; }
+  .unicorn__segment:nth-of-type(7)  { --i: 7; }
+  .unicorn__segment:nth-of-type(8)  { --i: 8; }
+  .unicorn__segment:nth-of-type(9)  { --i: 9; }
+  .unicorn__segment:nth-of-type(10) { --i: 10; }
+  .unicorn__segment:nth-of-type(11) { --i: 11; }
+  .unicorn__segment:nth-of-type(12) { --i: 12; }
+  .unicorn__segment:nth-of-type(13) { --i: 13; }
+  .unicorn__segment:nth-of-type(14) { --i: 14; }
+  .unicorn__segment:nth-of-type(15) { --i: 15; }
+  .unicorn__segment:nth-of-type(16) { --i: 16; }
+  .unicorn__segment:nth-of-type(17) { --i: 17; }
+  .unicorn__segment:nth-of-type(18) { --i: 18; }
+  .unicorn__segment:nth-of-type(19) { --i: 19; }
+  .unicorn__segment:nth-of-type(20) { --i: 20; }
+  .unicorn__segment:nth-of-type(21) { --i: 21; }
+  .unicorn__segment:nth-of-type(22) { --i: 22; }
+  .unicorn__segment:nth-of-type(23) { --i: 23; }
+  .unicorn__segment:nth-of-type(24) { --i: 24; }
+  .unicorn__segment:nth-of-type(25) { --i: 25; }
+  .unicorn__segment:nth-of-type(26) { --i: 26; }
+  .unicorn__segment:nth-of-type(27) { --i: 27; }
+  .unicorn__segment:nth-of-type(28) { --i: 28; }
+  .unicorn__segment:nth-of-type(29) { --i: 29; }
+  .unicorn__segment:nth-of-type(30) { --i: 30; }
